@@ -30,9 +30,6 @@
                             <div class="button-player">
                                 <a href="#" class="play" data-audio="<?=$data["url_audio"];?>"><i class="fa fa-play"></i></a>
                             </div>
-                            <div class="button-facebook">
-                                <a href="#" class="facebook"><i class="fa fa-facebook-square"></i></a>
-                            </div>
                             <img src="<?= $data["url_imagen"];?>" />
                         </div>
                         <div class="text-item">
