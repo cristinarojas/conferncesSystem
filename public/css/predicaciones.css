@@ -1,0 +1,244 @@
+html,body {
+  height: 100%;
+  overflow-x: hidden;
+}
+body {
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+/* Clear fix  http://flatfull.com/themes/musik/index.html?#*/
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* Style for the project */
+.container {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background-color: #f2f4f8;
+  margin: 0 auto;
+
+  position: absolute;
+  z-index: 1;
+}
+
+.header-wrapper {
+    width: 100%;
+    background-color: #fff;
+
+    position: absolute;
+    z-index: 2;
+}
+.container .header-wrapper .logo {
+  width: 60px;
+  float: left;
+  background-color: #fff;
+}
+
+.container .header-wrapper .logo img {
+  width: 90%;
+  padding: 1%;
+}
+
+.wrapper-search {
+    width: 100%;
+}
+
+.container .header-wrapper .search {
+    width: 88%;
+    height: 100%;
+    float: left;
+    background-color: #fff;
+}
+
+/*iPhone4 Portrait*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .container .header-wrapper .search {
+        width: 80%;
+    }
+}
+
+.container .header-wrapper .search i {
+  font-size: 1.5em;
+  color: #788188;
+  cursor: pointer;
+}
+
+.container .header-wrapper .search input {
+  font-size: 0.9em;
+  width: 80%;
+  vertical-align: middle;
+  height: 50px;
+  border-color: transparent;
+  color: #788188;
+  font-family: 'Source Sans Pro', sans-serif;
+  outline: 0;
+}
+
+.container .sermons {
+  background-color: #f7f7f7;
+  border-top: 1px solid #dbdbdb;
+  height: 80%;
+  overflow-y: scroll;
+  padding-top: 5%;
+}
+
+/*iPhone4 Portrait*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .container .sermons {
+        padding-top: 15%;
+    }
+}
+
+/* iPad2 Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .container .sermons {
+        padding-top: 7%;
+    }
+}
+
+/* Motorola */
+@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation : landscape) {
+    .container .sermons  {
+        padding: 10%;
+    }
+}
+
+/* Motorola Android Portrait*/
+@media only screen and (min-device-width: 540px) and (max-device-width: 960px) {
+    .container .sermons  {
+        padding: 10%;
+    }
+}
+/* Amazon kindle firts generation*/
+@media only screen and (min-device-width: 600px) and (max-device-width: 1024px) {
+    .container .sermons  {
+        padding: 10%;
+    }
+}
+
+.container .sermons .item {
+  width: 180px;
+  height: 265px;
+  float: left;
+  margin: 13px;
+  position: relative;
+}
+
+.container .sermons .item .image-item {
+    width: 180px;
+    height: 200px;
+    display: block;
+    position: absolute;
+}
+
+.container .sermons .item .image-item .button-player {
+    width: 180px;
+    height: 50px;
+    margin-top: 90px;
+    position: absolute;
+}
+
+.container .sermons .item .image-item .button-player i {
+    font-size: 3em;
+    margin-left: 65px;
+    color: white;
+}
+
+.container .sermons .item .image-item .button-player i:hover {
+    color: #D0D0D0;
+}
+
+.container .sermons .item .image-item .button-facebook {
+    width: 180px;
+    height: 25px;
+    margin-top: 170px;
+    position: absolute;
+}
+
+.container .sermons .item .image-item .button-facebook i {
+    margin-left: 5px;
+    font-size: 1.5em;
+    color: #D0D0D0;
+}
+
+.container .sermons .item .image-item .button-facebook i:hover {
+    color: #3b5998;
+}
+
+.container .sermons .item .image-item img {
+  width: 180px;
+  height: 200px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.container .sermons .item .text-item {
+  width: 180px;
+  height: 55px;
+  margin-top: 205px;
+  position: absolute;
+}
+
+.container .sermons .item .text-item a {
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #939aa0;
+  font-size: 12px;
+}
+
+.container .sermons .item .text-item .autor {
+  color: #545a5f;
+  font-size: 14px;
+}
+
+/*-------------------------------------------*/
+.player {
+  background-color: #092756;
+  height: 15%;
+  width: 100%;
+
+  position: absolute;
+  z-index: 3;
+}
+
+.player audio {
+    /*background-color: gray;
+    width: 90%;
+    margin-top: 13px;
+    margin-left: 10px;
+    background-color: transparent;*/
+    opacity: 0.7;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
