@@ -4,7 +4,9 @@
     $query = "SELECT * FROM predicaciones ORDER BY id DESC";
     $result = $db->query($query);
     if (isset($_POST["search"])) {
-
+        $search = $_POST["search"];
+        $query = "SELECT * FROM predicaciones WHERE titulo_audio LIKE '%$search%' ORDER BY id DESC";
+        $result = $db->query($query);
     }
 ?>
 
@@ -13,12 +15,12 @@
     <div class="container">
         <div class="header-wrapper clearfix">
             <div class="logo">
-                <img src="public/img/logo.png" />
+                <a href="index.php"><img src="public/img/logo.png" /></a>
             </div>
 
             <div class="search">
-                <i class="fa fa-search"></i>
-                <form action="reproductor.php" method="post">
+                <form action="index.php" method="post">
+                    <a href="javascript:;" onclick="parentNode.submit();"><i class="fa fa-search"></i></a>
                     <input type="text" name="search" class="" placeholder="Buscar predicaciones, por nombre ...">
                 </form>
             </div>
@@ -32,6 +34,10 @@
             <span id="currentAudio" style="display: none;"></span>
 
             <?php
+                if ($result->num_rows === 0) {
+                    echo ('<p>Búsqueda sin resultados, intente de nuevo.</p>');
+                    echo ('<p><a href="index.php">Regresar</a></p>');
+                }
                 while ($data = $result->fetch_assoc()) {
                 ?>
                     <div class="item">
@@ -42,8 +48,8 @@
                             <img src="<?= $data["url_imagen"];?>" />
                         </div>
                         <div class="text-item">
-                            <a href="#" class="autor"><?= utf8_encode($data["titulo_audio"]);?></a>
-                            <a href="#"><?= utf8_encode($data["nombre_autor"]);?></a>
+                            <span href="#" class="autor"><?= utf8_encode($data["titulo_audio"]);?></span>
+                            <span href="#"><?= utf8_encode($data["nombre_autor"]);?></span>
                         </div>
                     </div>
                 <?php

@@ -99,6 +99,15 @@ body {
   padding-top: 5%;
 }
 
+.container .sermons p {
+    color: #092756;
+    text-align: center;
+}
+
+.container .sermons p a {
+    color: #FF7F50;
+    text-align: center;
+}
 /*iPhone4 Portrait*/
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     .container .sermons {
@@ -158,11 +167,11 @@ body {
 .container .sermons .item .image-item .button-player i {
     font-size: 3em;
     margin-left: 65px;
-    color: white;
+    color: #F0F0F0;
 }
 
 .container .sermons .item .image-item .button-player i:hover {
-    color: #D0D0D0;
+    color: #BEBEBE;
 }
 
 .container .sermons .item .image-item img {
@@ -180,7 +189,7 @@ body {
   position: absolute;
 }
 
-.container .sermons .item .text-item a {
+.container .sermons .item .text-item span {
   width: 100%;
   display: block;
   text-decoration: none;
@@ -205,11 +214,6 @@ body {
 }
 
 .player audio {
-    /*background-color: gray;
-    width: 90%;
-    margin-top: 13px;
-    margin-left: 10px;
-    background-color: transparent;*/
     opacity: 0.7;
     width: 100%;
     position: relative;
