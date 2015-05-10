@@ -3,6 +3,9 @@
 
     $query = "SELECT * FROM predicaciones ORDER BY id DESC";
     $result = $db->query($query);
+    if (isset($_POST["search"])) {
+
+    }
 ?>
 
 <?php include "templates/head.php"; ?>
@@ -15,7 +18,13 @@
 
             <div class="search">
                 <i class="fa fa-search"></i>
-                <input type="text" class="" placeholder="Buscar predicaciones, por nombre ...">
+                <form action="reproductor.php" method="post">
+                    <input type="text" name="search" class="" placeholder="Buscar predicaciones, por nombre ...">
+                </form>
+            </div>
+
+            <div class="button-facebook">
+                <div class="fb-share-button" data-href="https://www.facebook.com/Grupoamormexico" data-layout="button_count"></div>
             </div>
         </div>
 
@@ -45,5 +54,12 @@
 
         <?php include "templates/player.php"; ?>
     </div> <!-- container -->
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <?php include "templates/footer.php"; ?>

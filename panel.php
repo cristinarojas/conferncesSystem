@@ -41,14 +41,19 @@ if (!$data) {
         $autor = $_POST["autor"];
         $sermonName = $_POST["sermonName"];
         $sermonFile = $_FILES["sermonFile"];
-        $ulrImage = $_POST["ulrImage"];
+        $urlImage = $_POST["urlImage"];
+        $urlAudio = $_POST["urlAudio"];
 
-        if ($autor === "" || $sermonName === "" || $sermonFile === "" || $ulrImage === "") {
+        if ($autor === "" || $sermonName === "") {
             die('Todos los campos son obligatorios.');
         }
 
         $uploaddir  = 'files/audios/';
         $uploadfile = $uploaddir . basename($sermonFile['name']);
+
+        if ($urlAudio !== "") {
+            $uploadfile = $urlAudio;
+        }
 
         $result = $db->query("SELECT url_audio FROM predicaciones WHERE url_audio = '$uploadfile'");
 
@@ -56,18 +61,30 @@ if (!$data) {
             echo '<script>alert("Archivo existente, sube otro."); window.location.href = "panel.php"; </script>';
             exit;
         } else {
+            if ($sermonFile['tmp_name'] === '' && $urlAudio === "") {
+                echo '<script>alert("Debes subir un archivo o especificar URL"); window.location.href = "panel.php"; </script>';
+                exit;
+            }
+
             // Validar extensiones de audios
             $extensions = array('mp3', 'wma', 'wmv');
             $extension = end(explode('.', $sermonFile['name']));
 
-
-            if (!in_array($extension, $extensions)) {
-                echo '<script>alert("La extensión de audio es incorrecta (Aceptadas: .mp3, .wma y .wmv)"); window.location.href = "panel.php"; </script>';
+            if ($urlAudio === "" && !in_array($extension, $extensions)) {
+                echo '<script>alert("La extension de audio es incorrecta (Aceptadas: .mp3, .wma y .wmv)"); window.location.href = "panel.php"; </script>';
                 exit;
             } else {
-                if (!move_uploaded_file($sermonFile['tmp_name'], $uploadfile)) {
-                    echo '<script>alert("Falló al subir archivo."); window.location.href = "panel.php"; </script>';
+                if ($urlAudio === "" && !move_uploaded_file($sermonFile['tmp_name'], $uploadfile)) {
+                    echo '<script>alert("Fallo al subir archivo."); window.location.href = "panel.php"; </script>';
                 } else {
+                    if ($urlAudio !== "") {
+                        $uploadfile = $urlAudio;
+                    }
+
+                    if ($urlImage === "") {
+                        $urlImage = "public/img/audio.jpg";
+                    }
+
                     $query = "INSERT INTO predicaciones (
                         nombre_autor,
                         url_audio,
@@ -76,7 +93,7 @@ if (!$data) {
                         VALUES (
                         '$autor',
                         '$uploadfile',
-                        '$ulrImage',
+                        '$urlImage',
                         '$sermonName')";
 
                     $insert = $db->query($query);
@@ -107,19 +124,20 @@ if (!$data) {
             <form action="panel.php" method="post" enctype="multipart/form-data">
 
                 <label>Nombre de la predicación&nbsp;
-                    <input type="text" name="sermonName" placeholder="Nombre predicación" class="input2" />
+                    <input type="text" name="sermonName" placeholder="Nombre predicación" class="input2" required/>
                 </label>
 
                 <label>Pastor o autor&nbsp;
-                    <input type="text" name="autor" placeholder="Nombre de autor" class="input1"  />
+                    <input type="text" name="autor" placeholder="Nombre de autor" class="input1" required/>
                 </label>
 
-                <label>Seleccionar predicación
+                <label>Subir audio o especificar Url del audio
                     <input type="file" name="sermonFile" class="file input3" />
+                    <input type="text" name="urlAudio" placeholder="Url audio" class="input5"  />
                 </label>
 
                 <label>Url de la imagen&nbsp;
-                    <input type="text" name="ulrImage"  splaceholder="http://..." class="input4" />
+                    <input type="text" name="urlImage"  splaceholder="http://..." class="input4" />
                 </label>
                 <input type="submit" name="save" value="Guardar" class="btn btn-primary btn-block btn-large" />
             </form>

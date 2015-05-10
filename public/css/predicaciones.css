@@ -55,10 +55,16 @@ body {
 }
 
 .container .header-wrapper .search {
-    width: 88%;
+    width: 85%;
     height: 100%;
     float: left;
     background-color: #fff;
+}
+
+.container .header-wrapper .button-facebook {
+    width: 5%;
+    float: left;
+    margin-top: 20px;
 }
 
 /*iPhone4 Portrait*/
@@ -157,23 +163,6 @@ body {
 
 .container .sermons .item .image-item .button-player i:hover {
     color: #D0D0D0;
-}
-
-.container .sermons .item .image-item .button-facebook {
-    width: 180px;
-    height: 25px;
-    margin-top: 170px;
-    position: absolute;
-}
-
-.container .sermons .item .image-item .button-facebook i {
-    margin-left: 5px;
-    font-size: 1.5em;
-    color: #D0D0D0;
-}
-
-.container .sermons .item .image-item .button-facebook i:hover {
-    color: #3b5998;
 }
 
 .container .sermons .item .image-item img {
