@@ -67,13 +67,6 @@ body {
     margin-top: 20px;
 }
 
-/*iPhone4 Portrait*/
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    .container .header-wrapper .search {
-        width: 80%;
-    }
-}
-
 .container .header-wrapper .search i {
   font-size: 1.5em;
   color: #788188;
@@ -107,39 +100,6 @@ body {
 .container .sermons p a {
     color: #FF7F50;
     text-align: center;
-}
-/*iPhone4 Portrait*/
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    .container .sermons {
-        padding-top: 15%;
-    }
-}
-
-/* iPad2 Portrait */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    .container .sermons {
-        padding-top: 7%;
-    }
-}
-
-/* Motorola */
-@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation : landscape) {
-    .container .sermons  {
-        padding: 10%;
-    }
-}
-
-/* Motorola Android Portrait*/
-@media only screen and (min-device-width: 540px) and (max-device-width: 960px) {
-    .container .sermons  {
-        padding: 10%;
-    }
-}
-/* Amazon kindle firts generation*/
-@media only screen and (min-device-width: 600px) and (max-device-width: 1024px) {
-    .container .sermons  {
-        padding: 10%;
-    }
 }
 
 .container .sermons .item {
@@ -193,7 +153,6 @@ body {
   width: 100%;
   display: block;
   text-decoration: none;
-  text-transform: capitalize;
   color: #939aa0;
   font-size: 12px;
 }

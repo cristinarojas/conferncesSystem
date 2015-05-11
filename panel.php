@@ -91,10 +91,10 @@ if (!$data) {
                         url_imagen,
                         titulo_audio)
                         VALUES (
-                        '$autor',
+                        '". utf8_decode($autor) ."',
                         '$uploadfile',
                         '$urlImage',
-                        '$sermonName')";
+                        '". utf8_decode($sermonName) ."')";
 
                     $insert = $db->query($query);
 

@@ -26,7 +26,7 @@
             </div>
 
             <div class="button-facebook">
-                <div class="fb-share-button" data-href="https://www.facebook.com/Grupoamormexico" data-layout="button_count"></div>
+                <div class="fb-share-button" data-href="http://grupoamor.org/predicaciones" data-layout="button"></div>
             </div>
         </div>
 

@@ -12,6 +12,7 @@ var playOrStop = function() {
         var audio = $(this).data('audio');
 
         if ($('#currentAudio').html() == '') {
+            $('.player audio').css('visibility', 'visible');
             player.attr('src', audio);
             $('#currentAudio').html(audio);
         } else {

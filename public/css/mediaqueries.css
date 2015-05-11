@@ -1,0 +1,95 @@
+@media only screen and (max-device-width: 854px) {
+    .container .header-wrapper .logo {
+        width: 29px;
+        margin-top: 8px;
+    }
+    .container .header-wrapper .search {
+        width: 57%;
+    }
+    .container .header-wrapper .search input {
+        font-size: 0.5em;
+    }
+    .container .header-wrapper .button-facebook {
+        margin-top: 15px;
+    }
+    .container .sermons {
+        padding-top: 15%;
+    }
+
+    .player audio {
+        visibility: hidden;
+    }
+}
+
+/* Tablet */
+@media only screen and (device-width: 768px) and (device-height: 1024px) {
+    .container .header-wrapper .search {
+        width: 65%;
+    }
+
+    .container .header-wrapper .logo {
+        width: 60px;
+        margin-top: 0px;
+    }
+}
+
+/* Motorola */
+@media only screen and (device-width: 360px) and (device-height: 640px) {
+    .container .header-wrapper .search {
+        width: 60%;
+    }
+    .container .sermons {
+        padding-top: 15%;
+    }
+}
+
+/*iPhone6 Portrait*/
+@media only screen and (device-width: 375px) and (device-height: 667px) {
+    .container .header-wrapper .search {
+        width: 56%;
+    }
+    .container .sermons {
+        padding-top: 15%;
+    }
+}
+
+
+/*iPhone5 Portrait *
+@media only screen and (device-width: 320px) and (device-height: 568px) {
+    .container .header-wrapper .logo {
+        width: 29px;
+        margin-top: 8px;
+    }
+    .container .header-wrapper .search {
+        width: 57%;
+    }
+    .container .header-wrapper .search input {
+        font-size: 0.5em;
+    }
+    .container .header-wrapper .button-facebook {
+        margin-top: 15px;
+    }
+    .container .sermons {
+        padding-top: 15%;
+    }
+}
+
+/*iPhone4 Portrait*
+@media only screen and (device-width: 320px) and (device-height: 480px) {
+    .container .header-wrapper .logo {
+        width: 29px;
+        margin-top: 8px;
+    }
+    .container .header-wrapper .search {
+        width: 57%;
+    }
+    .container .header-wrapper .search input {
+        font-size: 0.5em;
+    }
+    .container .header-wrapper .button-facebook {
+        margin-top: 15px;
+    }
+    .container .sermons {
+        padding-top: 15%;
+    }
+}*/
